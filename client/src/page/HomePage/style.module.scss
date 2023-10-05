@@ -1,0 +1,49 @@
+.item{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    border-radius: 12px;
+    border: 1px solid #EAEBED;
+    width: 448px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inputHeader {
+    color: var(--Grey-500, #ACADB9);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 8px;
+    border: 1px solid var(--Grey-200, #EAEBED);
+    background: var(--grey-scale-white, #FFF);
+
+
+    width: 950px;
+    padding: 12px;
+    outline: none;
+}
+
+.btnHeader {
+    position: absolute;
+    left: 81%;
+    top: 5px;
+    height: 32px;
+    padding: 4px 20px;
+    justify-content: center;
+    gap: 10px;
+
+    border-width: 0;
+    border-radius: 8px;
+    background: var(--Blue-Main-500, #5E96FC);
+}
