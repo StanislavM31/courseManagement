@@ -21,13 +21,19 @@ export default function HomePage() {
       description: "any description 2",
       city: "Grodno",
     },
+    {
+      id: 4,
+      header: "c#",
+      description: "any description 4",
+      city: "Grodno",
+    },
   ];
   return (
     <>
       <Header />
       <div className={style.searchBar}>
         <div>
-        <input className={style.inputHeader} type="text" placeholder="...введите названеи курса" />
+        <input className={style.inputHeader} type="text" placeholder="...введите название курса" />
         </div>
         <div>
           <button className={style.btnHeader}>Поиск</button>
@@ -39,6 +45,7 @@ export default function HomePage() {
             <div key={index} className={style.item}>
               <h2>{el.header}</h2>
               <p>{el.description}</p>
+              <p>{el.city}</p>
             </div>
           );
         })}

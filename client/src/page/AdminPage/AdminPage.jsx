@@ -12,11 +12,11 @@ export default function AdminPage() {
       return (
         <>
           <p>Курс</p>
-          <input type="text" />
+          <input type="text" placeholder="введите название курса"/>
           <p>Описание</p>
-          <input type="text" />
+          <input type="text" placeholder="введите описание"/>
           <p>Город</p>
-          <input type="text" />
+          <input type="text" placeholder="введите город"/>
         </>
       );
     } else if (stateBtn == "Обновление") {

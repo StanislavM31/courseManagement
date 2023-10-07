@@ -1,36 +1,67 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .crud {
   display: flex;
   gap: 50px;
   margin: 20px 10px;
-}
-.crud p {
-  color: var(--Black, #232134);
-  font-feature-settings: "clig" off, "liga" off;
+  p {
+    color: var(--Black, #232134);
+    font-feature-settings: "clig" off, "liga" off;
 
-  /* Title S/Bold */
-  font-family: Inter;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px; /* 100% */
+    /* Title S/Bold */
+    font: 700 20px "Inter";
+    line-height: 20px; /* 100% */
+  }
+  p:hover{
+    cursor: pointer;
+    color: #5e96fc;
+  }
 }
-p {
-  font-size: 15px;
-}
-
 .formInput {
   width: 400px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-.formInput button {
-  display: flex;
-  height: 40px;
-  padding: 4px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
-  background-color: rgb(32, 16, 175);
+
+  input {
+    padding: 8px 12px;
+  }
+  input::placeholder {
+    color: var(--Grey-500, #acadb9);
+    font-feature-settings: "clig" off, "liga" off;
+
+    /* Subtitle S */
+    font: 400 14px "Inter";
+    line-height: 20px; /* 142.857% */
+  }
+  p {
+    color: var(--Black, #232134);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  button {
+    display: flex;
+    height: 40px;
+    padding: 4px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    background-color: #5e96fc;
+    border-radius: 8px;
+    border: 1px solid #232134;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  button:active {
+    background-color: #5ee4fc;
+  }
 }
