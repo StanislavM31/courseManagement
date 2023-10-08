@@ -18,23 +18,20 @@ export default function AdminPage() {
     setStateBtn(event.target.textContent);
     /* event.target.classList.add(style.selected); */
   }
-  function set1(e) {
-    console.log("this is input: ",e.target.name);
-    const value1 =  e.target.value;
-    setValues({...objValues, course: value1});
-    console.log(objValues);
-  }
-  function set2(e) {
-    console.log("this is input: ",e.target.name);
-    const value2 =  e.target.value;
-    setValues({...objValues, description: value2});
-    console.log(objValues);
-  }
-  function set3(e) {
-    console.log("this is input: ",e.target.name);
-    const value3 =  e.target.value;
-    setValues({...objValues, city: value3});
-    console.log(objValues);
+  function collectFromInput(e){
+    if(e.target.name=="course"){
+      const value1 =  e.target.value;
+      setValues({...objValues, course: value1});
+      console.log(objValues);
+    } else if(e.target.name == "description"){
+      const value2 =  e.target.value;
+      setValues({...objValues, description: value2});
+      console.log(objValues);
+    } else if(e.target.name == "city"){
+      const value3 =  e.target.value;
+      setValues({...objValues, city: value3});
+      console.log(objValues);
+    }
   }
   function createObj(){
     setValues(newObjValues);
@@ -49,11 +46,11 @@ export default function AdminPage() {
       return (
         <>
           <p>Курс</p>
-          <input type="text" onChange={(e) => set1(e)} name="course" placeholder="...курс"/>
+          <input type="text" onChange={(e) => collectFromInput(e)} name="course" placeholder="...курс"/>
           <p>Описание</p>
-          <input type="text" defaultValue={""} onChange={(e) => set2(e)} name="description" placeholder="...описание"/>
+          <input type="text" defaultValue={""} onChange={(e) => collectFromInput(e)} name="description" placeholder="...описание"/>
           <p>Город</p>
-          <input type="text" defaultValue={""} onChange={(e) => set3(e)} name="city" placeholder="...город"/>
+          <input type="text" defaultValue={""} onChange={(e) => collectFromInput(e)} name="city" placeholder="...город"/>
         </>
       );
     } else if (stateBtn == "Обновление") {
