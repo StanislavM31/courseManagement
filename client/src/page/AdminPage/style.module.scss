@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .crud {
   display: flex;
   gap: 50px;
@@ -16,7 +15,7 @@
     font: 700 20px "Inter";
     line-height: 20px; /* 100% */
   }
-  p:hover{
+  p:hover {
     cursor: pointer;
     color: #5e96fc;
   }
@@ -57,9 +56,13 @@
     background-color: #5e96fc;
     border-radius: 8px;
     border: 1px solid #232134;
+    color: #fff;
+    font: 500 14px "Inter";
   }
   button:hover {
     cursor: pointer;
+    font: 500 16px "Inter";
+    transition: 0.5s;
   }
   button:active {
     background-color: #5ee4fc;

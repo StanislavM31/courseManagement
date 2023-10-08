@@ -38,7 +38,6 @@ p {
   border-radius: 8px;
   border: 1px solid var(--Grey-200, #eaebed);
   background: var(--grey-scale-white, #fff);
-
   width: 950px;
   padding: 12px;
   outline: none;
@@ -52,8 +51,12 @@ p {
   padding: 4px 20px;
   justify-content: center;
   gap: 10px;
-
+  color: #fff;
+  font: 500 14px "Inter";
   border-width: 0;
   border-radius: 8px;
   background: var(--Blue-Main-500, #5e96fc);
+}
+.btnHeader:hover{
+  cursor: pointer;
 }
