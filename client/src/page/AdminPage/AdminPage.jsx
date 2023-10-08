@@ -4,14 +4,14 @@ import { useState } from "react";
 
 export default function AdminPage() {
   const [stateBtn, setStateBtn] = useState("Создание");
-  const value1 = "", value2= "", value3= "" ;
-  const newObjValues = {
-    course: value1,
-    description: value2,
-    city: value3,
-  };
 
-  const [objValues, setValues] = useState(newObjValues);
+
+  const [inputValuesObject, setInputValuesObject] = useState({
+    id:"",
+    course: "",
+    description: "",
+    city: "",
+  });
 
 
   function changeStateBtn(event) {
@@ -20,22 +20,28 @@ export default function AdminPage() {
   }
   function collectFromInput(e){
     if(e.target.name=="course"){
-      const value1 =  e.target.value;
-      setValues({...objValues, course: value1});
-      console.log(objValues);
-    } else if(e.target.name == "description"){
-      const value2 =  e.target.value;
-      setValues({...objValues, description: value2});
-      console.log(objValues);
-    } else if(e.target.name == "city"){
-      const value3 =  e.target.value;
-      setValues({...objValues, city: value3});
-      console.log(objValues);
+      const course =  e.target.value;
+      setInputValuesObject({...inputValuesObject, course: course});
+      console.log(inputValuesObject);
+    }
+    else if(e.target.name == "description"){
+      const description =  e.target.value;
+      setInputValuesObject({...inputValuesObject, description: description});
+      console.log(inputValuesObject);
+    }
+    else if(e.target.name == "city"){
+      const city =  e.target.value;
+      setInputValuesObject({...inputValuesObject, city: city});
+      console.log(inputValuesObject);
+    }
+    else if(e.target.name == "id"){
+      const id =  e.target.value;
+      setInputValuesObject({...inputValuesObject, id: id});
+      console.log(inputValuesObject);
     }
   }
   function createObj(){
-    setValues(newObjValues);
-    console.log(objValues);
+    console.log(inputValuesObject);
   }
   /*
 
@@ -48,29 +54,29 @@ export default function AdminPage() {
           <p>Курс</p>
           <input type="text" onChange={(e) => collectFromInput(e)} name="course" placeholder="...курс"/>
           <p>Описание</p>
-          <input type="text" defaultValue={""} onChange={(e) => collectFromInput(e)} name="description" placeholder="...описание"/>
+          <input type="text" onChange={(e) => collectFromInput(e)} name="description" placeholder="...описание"/>
           <p>Город</p>
-          <input type="text" defaultValue={""} onChange={(e) => collectFromInput(e)} name="city" placeholder="...город"/>
+          <input type="text" onChange={(e) => collectFromInput(e)} name="city" placeholder="...город"/>
         </>
       );
     } else if (stateBtn == "Обновление") {
       return (
         <>
           <p>ID</p>
-          <input type="text" />
+          <input type="text" onChange={(e) => collectFromInput(e)} name="id" placeholder="...курс"/>
           <p>Курс</p>
-          <input type="text" />
+          <input type="text" onChange={(e) => collectFromInput(e)} name="course" placeholder="...курс"/>
           <p>Описание</p>
-          <input type="text" />
+          <input type="text" onChange={(e) => collectFromInput(e)} name="description" placeholder="...описание"/>
           <p>Город</p>
-          <input type="text" />
+          <input type="text" onChange={(e) => collectFromInput(e)} name="city" placeholder="...город"/>
         </>
       );
     } else {
       return (
         <>
           <p>ID</p>
-          <input type="text" />
+          <input type="text" onChange={(e) => collectFromInput(e)} name="id" placeholder="...курс"/>
         </>
       );
     }
