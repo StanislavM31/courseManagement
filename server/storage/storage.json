@@ -1,0 +1,9 @@
+[
+  { "id": "1bb68a70-6687-11ee-83a1-b589671b6839", "course": "updated", "description": "_updated", "city": "updatedCity" },
+  { "id": "f33bec00-6688-11ee-ab8d-cb8f226d7ca8", "course": "updated курс", "description": "updated Jgbcfybt", "city": "updated город" },
+  { "id": "e4ea07c0-673e-11ee-8b00-b9f8d4827f1e", "course": "rqqw", "description": "qwr", "city": "rqwr" },
+  { "id": "51d5f100-673f-11ee-85ee-f9bdbbaf3603", "course": "aaaaaaaaaa", "description": "bbbbbbbb", "city": "ccccccccccc" },
+  { "id": "6c3160c0-673f-11ee-b7b1-bb303cd694df", "course": "anotherCourse", "description": "eee", "city": "Minsk" },
+  { "id": "bd9e68e0-673f-11ee-b741-11f28abe6f22", "course": "weCourse", "description": "then", "city": "Vitebsk" },
+  { "id": "067d30e0-674b-11ee-9425-ed159a82f946", "course": "c#", "description": "программирование", "city": "Вилейка" }
+]
