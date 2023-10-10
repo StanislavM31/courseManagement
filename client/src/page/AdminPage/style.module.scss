@@ -1,12 +1,10 @@
-* {
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .crud {
   display: flex;
   gap: 50px;
   margin: 20px 10px;
+  width: 400px;
+  margin: auto;
   p {
     color: var(--Black, #232134);
     font-feature-settings: "clig" off, "liga" off;
@@ -22,6 +20,7 @@
 }
 .formInput {
   width: 400px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 30px;

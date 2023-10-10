@@ -10,6 +10,7 @@ export default function AdminPage() {
   const [deleteCourse] = useDeleteCourseMutation();
 
 
+
   const [inputValuesObject, setInputValuesObject] = useState({
     id:"",
     course: "",
@@ -24,6 +25,11 @@ export default function AdminPage() {
   function changeStateBtn(event) {
     setStateBtn(event.target.textContent);
     /* event.target.classList.add(style.selected); */
+
+    const children = Array.from(event.currentTarget.children);
+    children.forEach((el)=>{el.style.color="black"})
+    event.target.style.color = "#5e96fc";
+
   }
   function collectFromInput(e){
     if(e.target.name=="course"){
@@ -60,13 +66,16 @@ export default function AdminPage() {
     if(stateBtn=="Создание"){
       const temp = await createCourse(inputValuesObject);
       console.log(temp.data);
+      window.location.reload();
     } else if(stateBtn=="Обновление"){
       const temp = await updateCourse(inputValuesObject);
       console.log(temp.data);
+      window.location.reload();
     }
       else if(stateBtn=="Удаление"){
       const temp = await deleteCourse(inputValuesObject);
       console.log(temp.data);
+      window.location.reload();
     }
   }
   function renderForm() {
@@ -106,10 +115,10 @@ export default function AdminPage() {
   return (
     <>
       <Header />
-      <div className={style.crud}>
-        <p onClick={changeStateBtn}>Создание</p>
-        <p onClick={changeStateBtn}>Обновление</p>
-        <p onClick={changeStateBtn}>Удаление</p>
+      <div className={style.crud} onClick={changeStateBtn}>
+        <p >Создание</p>
+        <p >Обновление</p>
+        <p >Удаление</p>
       </div>
       <div className={style.formInput}>
         {renderForm()}

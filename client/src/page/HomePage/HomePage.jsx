@@ -1,8 +1,10 @@
 import Header from "../../Components/Header/Header";
 import style from "./style.module.scss";
+import { Link } from "react-router-dom";
+import { useGetAllCoursesQuery } from "../../services/course";
 
 export default function HomePage() {
-  const arrayCourse = [
+  /*  const arrayCourse = [
     {
       id: 1,
       header: "js",
@@ -27,26 +29,36 @@ export default function HomePage() {
       description: "any description 4",
       city: "Grodno",
     },
-  ];
+  ]; */
+  const { data } = useGetAllCoursesQuery();
+  /* const result  = useGetAllCoursesQuery();
+result.data */
   return (
     <>
       <Header />
       <div className={style.searchBar}>
         <div>
-        <input className={style.inputHeader} type="text" placeholder="...введите название курса" />
+          <input
+            className={style.inputHeader}
+            type="text"
+            placeholder="...введите название курса"
+          />
         </div>
         <div>
           <button className={style.btnHeader}>Поиск</button>
         </div>
       </div>
       <div className={style.container}>
-        {arrayCourse.map((el, index) => {
+        {data?.map((el, index) => {
+          //?data==undefined?(есть ли ключ data в переменной map)
           return (
-            <div key={index} className={style.item}>
-              <h2>{el.header}</h2>
-              <p>{el.description}</p>
-              <p>{el.city}</p>
-            </div>
+            <Link to={`/course/${el.id}`} key={index}>
+              <div className={style.item}>
+                <h2>{el.course}</h2>
+                <p>{el.description}</p>
+                <p>{el.city}</p>
+              </div>
+            </Link>
           );
         })}
       </div>

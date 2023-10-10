@@ -26,7 +26,19 @@ export const courseApi = createApi({
                 method:"DELETE",
             })
         }),
+        getAllCourses:builder.query({
+            query:()=>({
+                url:`/course/`,
+                method: `GET`,
+            })
+        }),
+        getCourseId:builder.query({
+            query:(id)=>({
+                url:`/course/${id}`,
+                method: `GET`,
+            })
+        })
     })
 })
 
-export const{useCreateCourseMutation, useUpdateCourseMutation, useDeleteCourseMutation}= courseApi
+export const{useCreateCourseMutation, useUpdateCourseMutation, useDeleteCourseMutation, useGetAllCoursesQuery, useGetCourseIdQuery}= courseApi

@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: rgb(240, 208, 167);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 0 30px 0;
+  gap: 50px;
+  width: 400px;
+  margin: auto;
+
+  h2 {
+    font: 600 15px "Inter";
+    text-align: center;
+  }
+  p {
+    font: 400 12px "Inter";
+    color: rgb(56, 55, 55);
+    text-align: center;
+  }
+
+  button {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding: 4px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    background-color: #5e96fc;
+    border-radius: 8px;
+    border: 1px solid #232134;
+    color: #fff;
+    font: 500 14px "Inter";
+    &:hover {
+      cursor: pointer;
+      font: 500 16px "Inter";
+      transition: 0.5s;
+    }
+    &:active {
+      background-color: #5ee4fc;
+    }
+  }
+}
